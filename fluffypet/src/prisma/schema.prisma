@@ -1,0 +1,78 @@
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  pets      Pet[]
+  bookings  Booking[]
+  reviews    Review[]
+}
+
+model Pet {
+  id        Int      @id @default(autoincrement())
+  name      String
+  type      String
+  breed     String
+  age       Int
+  medicalInfo String
+  ownerId   Int
+  owner     User     @relation(fields: [ownerId], references: [id])
+}
+
+model Service {
+  id        Int      @id @default(autoincrement())
+  name      String
+  description String
+  price     Float
+  bookings  Booking[]
+  reviews    Review[]
+}
+
+model Vet {
+  id        Int      @id @default(autoincrement())
+  name      String
+  specialties String
+  availability String
+  reviews    Review[]
+}
+
+model Place {
+  id        Int      @id @default(autoincrement())
+  name      String
+  location  String
+  reviews    Review[]
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  serviceId Int
+  vetId     Int?
+  date      DateTime
+  time      String
+  user      User     @relation(fields: [userId], references: [id])
+  service   Service  @relation(fields: [serviceId], references: [id])
+  vet       Vet?     @relation(fields: [vetId], references: [id])
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  serviceId Int?
+  vetId     Int?
+  placeId   Int?
+  rating    Int
+  comment   String
+  user      User     @relation(fields: [userId], references: [id])
+  service   Service? @relation(fields: [serviceId], references: [id])
+  vet       Vet?     @relation(fields: [vetId], references: [id])
+  place     Place?   @relation(fields: [placeId], references: [id])
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
