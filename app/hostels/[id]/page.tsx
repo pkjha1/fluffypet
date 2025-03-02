@@ -4,7 +4,7 @@ import { HostelProfile } from "@/components/hostel-profile"
 import { RoomList } from "@/components/room-list"
 import { BookingCalendar } from "@/components/booking-calendar"
 import { HostelReviews } from "@/components/hostel-reviews"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default async function HostelPage({ params }: { params: { id: string } }) {

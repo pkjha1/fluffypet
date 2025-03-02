@@ -3,7 +3,7 @@ import { fetchClinicProfile } from "@/app/actions"
 import { ClinicProfileView } from "@/components/clinic/profile-view"
 import { VetList } from "@/components/clinic/vet-list"
 import { ServicesList } from "@/components/clinic/services-list"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default async function ClinicProfilePage({ params }: { params: { id: string } }) {

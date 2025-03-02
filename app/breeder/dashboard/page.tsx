@@ -1,5 +1,5 @@
 import { fetchBreederDashboardData } from "@/app/actions"
-import { Header } from "@/components/header"
+import Header from "@/components/Header"
 import { BreederStats } from "@/components/breeder/dashboard/stats"
 import { ActiveListings } from "@/components/breeder/dashboard/active-listings"
 import { AdoptionRequests } from "@/components/breeder/dashboard/adoption-requests"
