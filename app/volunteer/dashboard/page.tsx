@@ -6,6 +6,7 @@ import { AvailabilityCalendar } from "@/components/volunteer/dashboard/availabil
 import { ImpactMetrics } from "@/components/volunteer/dashboard/impact-metrics"
 import { EmergencyAlerts } from "@/components/volunteer/dashboard/emergency-alerts"
 import { SkillsCertification } from "@/components/volunteer/dashboard/skills-certification"
+import { addNewPet } from '@/app/actions'
 
 export default async function VolunteerDashboard() {
   const dashboardData = await fetchVolunteerDashboardData()

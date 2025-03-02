@@ -9,6 +9,7 @@ import { AppointmentCalendar } from "@/components/vet/dashboard/appointment-cale
 import { RecentRecords } from "@/components/vet/dashboard/recent-records"
 import { ComplianceStatus } from "@/components/vet/dashboard/compliance-status"
 
+
 export default async function VetDashboard() {
   const dashboardData = await fetchVetDashboardData()
 

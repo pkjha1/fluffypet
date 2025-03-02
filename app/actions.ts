@@ -3,6 +3,65 @@
 import { auth } from "@clerk/nextjs"
 import { revalidatePath } from "next/cache"
 import { db } from "./db" // Import the db object
+import { prisma } from '@/lib/prisma'
+
+export async function fetchVetDashboardData() {
+  try {
+    // Fetch recent appointments
+    const recentAppointments = await prisma.appointment.findMany({
+      take: 10,
+      orderBy: {
+        date: 'desc'
+      },
+      include: {
+        pet: true,
+        owner: true
+      }
+    })
+
+    // Fetch statistics
+    const totalPets = await prisma.pet.count()
+    const totalAppointments = await prisma.appointment.count()
+    const upcomingAppointments = await prisma.appointment.count({
+      where: {
+        date: {
+          gte: new Date()
+        }
+      }
+    })
+
+    return {
+      recentAppointments,
+      statistics: {
+        totalPets,
+        totalAppointments,
+        upcomingAppointments
+      }
+    }
+  } catch (error) {
+    console.error('Error fetching dashboard data:', error)
+    throw new Error('Failed to fetch dashboard data')
+  }
+}
+
+
+export async function addNewPet(formData: FormData) {
+  const name = formData.get('name')?.toString() || ''
+  const type = formData.get('type')?.toString() || ''
+  const breed = formData.get('breed')?.toString() || ''
+  const age = parseInt(formData.get('age')?.toString() || '0')
+  
+  const pet = await prisma.pet.create({
+    data: {
+      name,
+      type,
+      breed,
+      age
+    }
+  })
+
+  return pet
+}
 
 export async function updateUserRole(userId: string, role: string) {
   const { sessionClaims } = auth()

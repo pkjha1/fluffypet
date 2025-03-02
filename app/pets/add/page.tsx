@@ -14,6 +14,7 @@ import { toast } from "@/components/ui/use-toast"
 import { addNewPet } from "@/app/actions"
 import { uploadImage } from "@/app/actions"
 import Header from "@/components/Header" // Import the Header component
+import { addNewPet } from '@/app/actions'
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
