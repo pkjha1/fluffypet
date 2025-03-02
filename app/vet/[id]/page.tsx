@@ -3,7 +3,7 @@ import { fetchVetProfile } from "@/app/actions"
 import { VetProfileView } from "@/components/vet/profile-view"
 import { AppointmentScheduler } from "@/components/vet/appointment-scheduler"
 import { PatientList } from "@/components/vet/patient-list"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default async function VetProfilePage({ params }: { params: { id: string } }) {

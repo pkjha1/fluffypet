@@ -1,7 +1,7 @@
 import { fetchVolunteerProfile, fetchAvailableMissions } from "@/app/actions"
 import { VolunteerDashboard } from "@/components/volunteer-dashboard"
 import { ImpactStats } from "@/components/impact-stats"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"

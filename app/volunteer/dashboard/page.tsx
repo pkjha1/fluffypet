@@ -1,5 +1,5 @@
 import { fetchVolunteerDashboardData } from "@/app/actions"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { VolunteerStats } from "@/components/volunteer/dashboard/stats"
 import { ActiveMissions } from "@/components/volunteer/dashboard/active-missions"
 import { AvailabilityCalendar } from "@/components/volunteer/dashboard/availability-calendar"
