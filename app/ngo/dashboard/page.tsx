@@ -1,5 +1,5 @@
 import { fetchNGODashboardData } from "@/app/actions"
-import { Header } from "@/components/header"
+import  Header from "@/components/Header"
 import { NGOStats } from "@/components/ngo/dashboard/stats"
 import { RescueCases } from "@/components/ngo/dashboard/rescue-cases"
 import { AdoptionStatus } from "@/components/ngo/dashboard/adoption-status"

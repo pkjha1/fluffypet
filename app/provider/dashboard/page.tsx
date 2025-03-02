@@ -1,5 +1,5 @@
 import { fetchProviderDashboardData } from "@/app/actions"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { ProviderStats } from "@/components/provider/dashboard/stats"
 import { ServiceList } from "@/components/provider/dashboard/service-list"
 import { BookingCalendar } from "@/components/provider/dashboard/booking-calendar"

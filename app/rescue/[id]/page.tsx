@@ -4,7 +4,7 @@ import { RescueProfile } from "@/components/rescue-profile"
 import { MedicalTimeline } from "@/components/medical-timeline"
 import { BehavioralReport } from "@/components/behavioral-report"
 import { AdoptionRequirements } from "@/components/adoption-requirements"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default async function RescuePage({ params }: { params: { id: string } }) {

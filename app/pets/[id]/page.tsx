@@ -4,7 +4,7 @@ import { fetchPetById, fetchPetImages } from "@/app/actions"
 import { formatDate } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { PawPrint, Calendar, Tag, ImageIcon } from "lucide-react"
 
 export default async function PetDetailPage({ params }: { params: { id: string } }) {

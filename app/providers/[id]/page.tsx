@@ -4,7 +4,7 @@ import { ServiceProviderProfile } from "@/components/service-provider-profile"
 import { AvailabilityCalendar } from "@/components/availability-calendar"
 import { ServicePricing } from "@/components/service-pricing"
 import { ProviderReviews } from "@/components/provider-reviews"
-import { Header } from "@/components/header"
+import  Header  from "@/components/Header"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default async function ProviderPage({ params }: { params: { id: string } }) {
